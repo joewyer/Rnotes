@@ -72,11 +72,57 @@ if (x){
   print ('True!')
 } else {print ('False :(')}
 
+#creating vector
+1:3
+#for loop
+for (i in 1:3) print(i)
+
+x <- 0
+
+for (i in 1:10){
+  x <- x + i 
+  print( x )
+}
+
+#loading stata files
+
+library(foreign)
+
+w<- read.dta("http://www.stata-press.com/data/r10/fish.dta")
+
+head(w)
+
+#if have questions
+?read.dta
+
+#reading excel files, need to download perl onto computer, do strawberry perl
+
+install.packages("gdata")
+library(gdata)
+setwd("C:/Users/Joe/Dropbox/Alcohol Health Warning Labels/Joe's")
+#y<- read.xls("WorldBankAdolescentBirthRate.xls", perl="C:/strawberry/perl/bin/wperl.exe")
 
 
+?read.xls
 
+#what if there is a second sheet we want to read
+# y<- read.xls("WorldBankAdolescentBirthRate.xls", sheet=2 ,perl="C:/strawberry/perl/bin/wperl.exe")
+# if we know the excel file's tab name not number then use sheet="Sheet 2"
 
+#Character strings
 
+x<- "C:/Coding/Rnotes"
+setwd(x)
+getwd()
+#substitute a word in a character string with another
+gsub("Rnotes","Python",x)
+z<- gsub("Rnotes","Python",x)
+print(z)
+#combine strings
+paste("my name is inigo montoya", "you killed my father")
+#the command automatically adds spaces, to take it away use sep=
+paste("my name is inigo montoya", "you killed my father", sep="")
 
-
+#string to number
+as.numeric("5")
 
